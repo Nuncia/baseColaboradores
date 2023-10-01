@@ -1,14 +1,14 @@
-import { BaseColaboradores } from "./BaseColaboradores";
+// import { BaseColaboradores } from "./BaseColaboradores";
+import PropTypes from 'prop-types'
 
 const Listado = ({colaboradores}) => {
     
-
-
+ 
   return (
     <>
         <div style={{display: 'flex', flexDirection: 'column'}}>
             <h2>Colaboradores</h2>
-            <table className="table">
+            <table className="table table-modern">
                 <thead>
                     <tr>
                     <th scope="col">#</th>
@@ -19,17 +19,27 @@ const Listado = ({colaboradores}) => {
                     <th scope="col">Teléfono</th>
                     </tr>
                 </thead>
-                {colaboradores.map((colaborador) => 
                 <tbody>
+                {colaboradores.map((colaborador) => 
                     <tr key={colaborador.id}>
-                       
+                        <th scope="row">{colaborador.id}</th>
+                        <td scope="row">{colaborador.nombre}</td>
+                        <td scope="row">{colaborador.correo}</td>
+                        <td scope="row">{colaborador.edad}</td>
+                        <td scope="row">{colaborador.cargo}</td>
+                        <td scope="row">{colaborador.telefono}</td>
                      </tr>
+                     )}
                 </tbody>
-                    )}
+                    
             </table>
         </div>
     </>
   )
-}
+};
+
+Listado.propTypes = {
+    colaboradores: PropTypes.string
+};
 
 export default Listado
