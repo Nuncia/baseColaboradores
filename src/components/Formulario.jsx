@@ -17,7 +17,7 @@ const Formulario = ({colaboradores, setColaboradores}) => {
         setTelefono('');
     };
 
-    // const newId = colaboradores.length + 1;
+    const newId = colaboradores.length + 1;
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,7 +26,7 @@ const Formulario = ({colaboradores, setColaboradores}) => {
             return
         } else{
             const colaborador = { 
-                id: new Date.now(),
+                id: newId,
                 nombre,
                 correo,
                 edad,
